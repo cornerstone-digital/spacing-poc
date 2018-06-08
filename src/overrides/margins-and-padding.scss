@@ -1,0 +1,116 @@
+// $x-small: $gbl-margin-x-small;
+// $small: $gbl-margin-small;
+// $normal: $gbl-margin;
+// $large: $gbl-margin-large;
+// $x-large: $gbl-margin-x-large;
+
+// /* stylelint-disable */
+
+// /**
+// ----
+// XS / SM
+// ----
+// all-1
+// horizontal-1
+// vertical-1
+// padding-1, paddingTop-1, paddingRight-1, paddingBottom-1, paddingLeft-1
+// margin-1, marginTop-1, marginRight-1, marginBottom-1, marginLeft-1
+
+// ----
+// MD / LG / XL
+// ----
+// all-(size)-1
+// horizontal-(size)-1
+// vertical-(size)-1
+// padding-(size)-1, paddingTop-(size)-1, paddingRight-(size)-1, paddingBottom-(size)-1, paddingLeft-(size)-1
+// margin-(size)-1, marginTop-(size)-1, marginRight-(size)-1, marginBottom-(size)-1, marginLeft-(size)-1
+
+// */
+
+// $map-spacing: (
+//   'all': 0,
+//   'horizontal': 0,
+//   'vertical': 0,
+
+//   'padding': 0,
+//   'paddingTop': 0,
+//   'paddingRight': 0,
+//   'paddingBottom': 0,
+//   'paddingLeft': 0,
+
+//   'margin': 0,
+//   'marginTop': 0,
+//   'marginRight': 0,
+//   'marginBottom': 0,
+//   'marginLeft': ''
+// );
+
+
+// /* Old  */
+// $map: (
+//   // None
+//   'none': 0,
+
+//   // All
+//   'all-x-small': $x-small,
+//   'all-small': $small,
+//   'all': $normal,
+//   'all-large': $large,
+//   'all-x-large': $x-large,
+
+//   // Horizontal
+//   'horizontal-x-small': 0 $x-small,
+//   'horizontal-small': 0 $small,
+//   'horizontal': 0 $normal,
+//   'horizontal-large': 0 $large,
+//   'horizontal-x-large': 0 $x-large,
+
+//   // Vertical
+//   'vertical-x-small': $x-small 0,
+//   'vertical-small': $small 0,
+//   'vertical': $normal 0,
+//   'vertical-large': $large 0,
+//   'vertical-x-large': $x-large 0,
+
+//   // Top
+//   'top-x-small': $x-small 0 0,
+//   'top-small': $small 0 0,
+//   'top': $normal 0 0,
+//   'top-large': $large 0 0,
+//   'top-x-large': $x-large 0 0,
+
+//   // Bottom
+//   'bottom-x-small': 0 0 $x-small,
+//   'bottom-small': 0 0 $small,
+//   'bottom': 0 0 $normal,
+//   'bottom-large': 0 0 $large,
+//   'bottom-x-large': 0 0 $x-large,
+
+//   // Left
+//   'left-x-small': 0 0 0 $x-small,
+//   'left-small': 0 0 0 $small,
+//   'left': 0 0 0 $normal,
+//   'left-large': 0 0 0 $large,
+//   'left-x-large': 0 0 0 $x-large,
+
+//   // Right
+//   'right-x-small': 0 $x-small 0 0,
+//   'right-small': 0 $small 0 0,
+//   'right': 0 $normal 0 0,
+//   'right-large': 0 $large 0 0,
+//   'right-x-large': 0 $x-large 0 0
+// );
+
+// @each $margin, $variable in $map {
+//   :global(.m-#{$margin}) {
+//     margin: $variable;
+//   }
+// }
+
+// @each $padding, $variable in $map {
+//   :global(.p-#{$padding}) {
+//     padding: $variable;
+//   }
+// }
+
+// /* stylelint-enable */

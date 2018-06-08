@@ -1,0 +1,143 @@
+/* Old */
+$gbl-margin-xx-small: 5px;
+$gbl-margin-x-small: 10px;
+$gbl-margin-small: 20px;
+$gbl-margin: 30px;
+$gbl-margin-large: 40px;
+$gbl-margin-x-large: 50px;
+$gbl-margin-xx-large: 60px;
+$gbl-margin-xxx-large: 100px;
+
+/* New */
+$spacing-level-0: 0;
+$spacing-level-1: 8px;
+$spacing-level-2: 16px;
+$spacing-level-3: 24px;
+$spacing-level-4: 32px;
+$spacing-level-5: 40px;
+$spacing-level-6: 48px;
+$spacing-level-7: 56px;
+$spacing-level-8: 64px;
+$spacing-level-9: 80px;
+
+
+$spacing-levels: (
+  0: $spacing-level-0,
+  1: $spacing-level-1,
+  2: $spacing-level-2,
+  3: $spacing-level-3,
+  4: $spacing-level-4,
+  5: $spacing-level-5,
+  6: $spacing-level-6,
+  7: $spacing-level-7,
+  8: $spacing-level-8,
+  9: $spacing-level-9
+);
+
+// Margin and Padding
+
+/*
+padding-1, paddingTop-1, paddingRight-1, paddingBottom-1, paddingLeft-1
+margin-1, marginTop-1, marginRight-1, marginBottom-1, marginLeft-1
+*/
+@each $prop in (margin, padding) {
+  @each $size, $value in $spacing-levels {
+    .all-#{$size} {
+      padding: #{$value};
+      margin: #{$value};
+    }
+
+    .horizontal-#{$size} {
+      padding: inherit #{$value};
+      margin: inherit #{$value};
+    }
+
+    .vertical-#{$size} {
+      padding: #{$value} inherit;
+      margin: #{$value} inherit;
+    }
+
+    .#{$prop}Top-#{$size} {
+      #{$prop}-top: $value;
+    }
+
+    .#{$prop}Right-#{$size} {
+      #{$prop}-right: $value;
+    }
+
+    .#{$prop}Bottom-#{$size} {
+      #{$prop}-bottom: $value;
+    }
+
+    .#{$prop}Left-#{$size} {
+      #{$prop}-left: $value;
+    }
+
+  }
+}
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+      
+      @each $prop in (margin, padding) {
+        @each $size, $value in $spacing-levels {
+
+          .all#{$infix}-#{$size} {
+            padding: #{$value};
+            margin: #{$value};
+          }
+
+          .horizontal#{$infix}-#{$size} {
+            padding: inherit #{$value};
+            margin: inherit #{$value};
+          }
+
+          .vertical#{$infix}-#{$size} {
+            padding: #{$value} inherit;
+            margin: #{$value} inherit;
+          }
+
+          .#{$prop}Top#{$infix}-#{$size} {
+            #{$prop}-top: $value;
+          }
+    
+          .#{$prop}Right#{$infix}-#{$size} {
+            #{$prop}-right: $value;
+          }
+
+          .#{$prop}Bottom#{$infix}-#{$size} {
+            #{$prop}-bottom: $value;
+          }
+    
+          .#{$prop}Left#{$infix}-#{$size} {
+            #{$prop}-left: $value;
+          }
+        }
+      }
+    }
+  }
+  
+
+
+
+
+  /**
+----
+XS / SM
+----
+all-1
+horizontal-1
+vertical-1
+padding-1, paddingTop-1, paddingRight-1, paddingBottom-1, paddingLeft-1
+margin-1, marginTop-1, marginRight-1, marginBottom-1, marginLeft-1
+
+----
+MD / LG / XL
+----
+all-(size)-1
+horizontal-(size)-1
+vertical-(size)-1
+padding-(size)-1, paddingTop-(size)-1, paddingRight-(size)-1, paddingBottom-(size)-1, paddingLeft-(size)-1
+margin-(size)-1, marginTop-(size)-1, marginRight-(size)-1, marginBottom-(size)-1, marginLeft-(size)-1
+
+*/

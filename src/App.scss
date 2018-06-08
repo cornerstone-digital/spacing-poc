@@ -1,0 +1,10 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import './_resources/variables';
+@import './overrides/spacing';
+@import './overrides/margins-and-padding';
+
+body {
+  background: blue;
+}
+
+
